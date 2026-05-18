@@ -35,5 +35,22 @@ public class Program {
         for (Person person : found) {
             System.out.println("Similar: " + person.getFullName());
         }
+
+        double avgAge = 0.0;
+        int min = demoList.get(0).getAge();
+        int max = demoList.get(0).getAge();
+        for (Person person : demoList) {
+            avgAge += person.getAge();
+            if (person.getAge() < min) {
+                min = person.getAge();
+            }
+            if (person.getAge() > max) {
+                max = person.getAge();
+            }
+        }
+        avgAge /= demoList.size();
+        System.out.printf("Average age: %.2f%n", avgAge);
+        System.out.printf("Lowest age: %d%n", min);
+        System.out.printf("Highest age: %d%n", max);
     }
 }
