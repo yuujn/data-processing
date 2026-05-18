@@ -16,9 +16,9 @@ public class Person {
             new Person("King", "Julian", 1111),
     });
 
-    private String firstName;
-    private String lastName;
-    private int age;
+    private final String firstName;
+    private final String lastName;
+    private final int age;
 
     public Person(String firstName, String lastName, int age) {
         this.firstName = firstName;
