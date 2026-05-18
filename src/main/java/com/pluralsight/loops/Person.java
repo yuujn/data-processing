@@ -19,6 +19,10 @@ public class Person {
         return lastName;
     }
 
+    public String getFullName() {
+        return firstName + " " + lastName;
+    }
+
     public int getAge() {
         return age;
     }

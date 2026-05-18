@@ -2,8 +2,11 @@ package com.pluralsight.loops;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Program {
+    static Scanner scan = new Scanner(System.in);
+
     public static void main(String[] args) {
         List<Person> demoList = List.of(new Person[]{
                 new Person("John", "N", 25),
@@ -18,6 +21,19 @@ public class Program {
                 new Person("King", "Julian", 1111),
         });
 
-        System.out.println(demoList.size());
+        System.out.print("First Name: ");
+        String searchFirst = scan.nextLine();
+
+        ArrayList<Person> found = new ArrayList<>();
+
+        for (Person person : demoList) {
+            if (person.getFirstName().toLowerCase().contains(searchFirst.toLowerCase())) {
+                found.add(person);
+            }
+        }
+
+        for (Person person : found) {
+            System.out.println("Similar: " + person.getFullName());
+        }
     }
 }
