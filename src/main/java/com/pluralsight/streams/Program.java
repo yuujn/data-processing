@@ -23,7 +23,7 @@ public class Program {
 
         double avgAge = demoList.stream()
                 .mapToDouble(Person::getAge)
-                .reduce(0., Double::sum) / demoList.size();
+                .sum() / demoList.size();
         List<Integer> ages = demoList.stream().map(Person::getAge).sorted().toList();
         int min = ages.get(0);
         int max = ages.get(ages.size() - 1);
