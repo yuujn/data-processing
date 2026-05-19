@@ -23,8 +23,7 @@ public class Program {
         found.forEach(x -> System.out.println("Similar: " + x.getFullName()));
 
         double avgAge = demoList.stream()
-                .map(Person::getAge)
-                .map(x -> (double) x)
+                .mapToDouble(Person::getAge)
                 .reduce(0., Double::sum) / demoList.size();
         List<Integer> ages = demoList.stream().map(Person::getAge).sorted().toList();
         int min = ages.get(0);
